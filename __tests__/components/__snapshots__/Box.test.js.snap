@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box component should render with O value 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#4A8305",
+        "height": 150,
+        "justifyContent": "center",
+        "marginBottom": 5,
+        "marginLeft": 6,
+        "width": 150,
+      },
+      Object {
+        "backgroundColor": "red",
+      },
+    ]
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 40,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      O
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Box component should render with X value 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#4A8305",
+        "height": 150,
+        "justifyContent": "center",
+        "marginBottom": 5,
+        "marginLeft": 6,
+        "width": 150,
+      },
+      Object {
+        "backgroundColor": "grey",
+      },
+    ]
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 40,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      X
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Box component should render without value 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#4A8305",
+        "height": 150,
+        "justifyContent": "center",
+        "marginBottom": 5,
+        "marginLeft": 6,
+        "width": 150,
+      },
+      Object {},
+    ]
+  }
+>
+  <View
+    accessible={true}
+    isTVSelectable={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 40,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
