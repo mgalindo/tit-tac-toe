@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
   Text,
   View,
@@ -30,6 +31,13 @@ const Box = props => {
       </TouchableOpacity>
     </View>
   );
+};
+
+Box.propTypes = {
+  value: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+  curPlayer: PropTypes.string.isRequired,
+  onPlayerMove: PropTypes.func.isRequired
 };
 
 const styles = StyleSheet.create({
