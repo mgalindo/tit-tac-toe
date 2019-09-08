@@ -1,6 +1,7 @@
-import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
-import Box from './Box';
+import React from "react";
+import PropTypes from "prop-types";
+import { View, StyleSheet, Text } from "react-native";
+import Box from "./Box";
 
 const Board = props => {
   const renderRow = rowNum => {
@@ -31,26 +32,34 @@ const Board = props => {
           </View>
         );
       })}
-      <Text style={styles.playerText}>Next Player: {curPlayer}</Text>
+      <Text style={styles.playerText} testID="player-text">
+        Next Player: {curPlayer}
+      </Text>
     </View>
   );
+};
+
+Board.propTypes = {
+  values: PropTypes.arrayOf(PropTypes.string).isRequired,
+  curPlayer: PropTypes.string.isRequired,
+  onPlayerMove: PropTypes.func.isRequired
 };
 
 const styles = StyleSheet.create({
   boardContainer: {
     flex: 0.8,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
   },
   playerText: {
     marginTop: 25,
     fontSize: 30,
-    color: '#4A8305',
+    color: "#4A8305"
   },
   row: {
-    flexDirection: 'row',
-  },
+    flexDirection: "row"
+  }
 });
 
 export default Board;
