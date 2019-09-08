@@ -486,6 +486,7 @@ exports[`TicTacToe component should render empty TicTacToe 1`] = `
           "opacity": 1,
         }
       }
+      testID="restart-button"
     >
       <View
         style={

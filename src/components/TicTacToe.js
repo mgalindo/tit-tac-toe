@@ -65,6 +65,7 @@ export default class TicTacToe extends React.Component {
             color="grey"
             title="Restart Game"
             onPress={this.restartGame}
+            testID="restart-button"
           />
         </View>
       </View>
