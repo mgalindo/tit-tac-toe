@@ -20,6 +20,9 @@ const Box = props => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
+          //This condition seems redundant because we are setting the disable prop
+          //however while unit testing even when the component is disabled the event fires 
+          //when pressing the button
           if (!disabled) {
             onPlayerMove(index, curPlayer);
           }
