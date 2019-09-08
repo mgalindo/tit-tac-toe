@@ -1,25 +1,31 @@
-import React from 'react';
+import React from "react";
 import {
   Text,
   View,
   StyleSheet,
   Dimensions,
-  TouchableOpacity,
-} from 'react-native';
+  TouchableOpacity
+} from "react-native";
 
-const DeviceWidth = Dimensions.get('window').width;
+const DeviceWidth = Dimensions.get("window").width;
 
 const Box = props => {
   const { value, index, onPlayerMove, curPlayer } = props;
-  const disabled = value.trim() !== '';
-  let valueStyle = value.trim() === '' ? {} : styles['box' + value];
+  const disabled = value.trim() !== "";
+  let valueStyle = value.trim() === "" ? {} : styles["box" + value];
 
   return (
     <View style={[styles.box, valueStyle]}>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => onPlayerMove(index, curPlayer)}
-        disabled={disabled}>
+        onPress={() => {
+          if (!disabled) {
+            onPlayerMove(index, curPlayer);
+          }
+        }}
+        disabled={disabled}
+        testID="box-button"
+      >
         <Text style={styles.boxText}>{value}</Text>
       </TouchableOpacity>
     </View>
@@ -32,22 +38,22 @@ const styles = StyleSheet.create({
     height: DeviceWidth * 0.2,
     marginBottom: 5,
     marginLeft: 6,
-    backgroundColor: '#4A8305',
-    justifyContent: 'center',
+    backgroundColor: "#4A8305",
+    justifyContent: "center"
   },
   boxX: {
-    backgroundColor: 'grey',
+    backgroundColor: "grey"
   },
   boxO: {
-    backgroundColor: 'red',
+    backgroundColor: "red"
   },
   button: {
-    alignItems: 'center',
+    alignItems: "center"
   },
   boxText: {
     fontSize: 40,
-    fontWeight: 'bold',
-  },
+    fontWeight: "bold"
+  }
 });
 
 export default Box;

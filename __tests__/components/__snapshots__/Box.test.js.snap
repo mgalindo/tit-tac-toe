@@ -33,6 +33,7 @@ exports[`Box component should render with O value 1`] = `
         "opacity": 1,
       }
     }
+    testID="box-button"
   >
     <Text
       style={
@@ -81,6 +82,7 @@ exports[`Box component should render with X value 1`] = `
         "opacity": 1,
       }
     }
+    testID="box-button"
   >
     <Text
       style={
@@ -127,6 +129,7 @@ exports[`Box component should render without value 1`] = `
         "opacity": 1,
       }
     }
+    testID="box-button"
   >
     <Text
       style={

@@ -1,37 +1,49 @@
 import React from "react";
-
-import { render } from "react-native-testing-library";
+import { render, fireEvent } from "react-native-testing-library";
 
 import Box from "../../src/components/Box";
-import { italic } from "ansi-colors";
 
 describe("Box component", () => {
   let props;
-  let onPlayerMove;
+  let onMockPlayerMove;
 
   beforeEach(() => {
-    const onPlayerMove = jest.fn();
-    props = { value: "", index: 0, curPlayer: "X", onPlayerMove: onPlayerMove };
+    onMockPlayerMove = jest.fn();
+    jest.clearAllMocks();
+    props = {
+      value: "",
+      index: 0,
+      curPlayer: "X",
+      onPlayerMove: onMockPlayerMove
+    };
   });
 
   test("should render without value", () => {
-    expect.assertions(1);
-    const { toJSON } = render(<Box {...props} />);
+    expect.assertions(2);
+    const { toJSON, getByTestId } = render(<Box {...props} />);
+    fireEvent(getByTestId("box-button"), "press");
+
     expect(toJSON()).toMatchSnapshot();
+    expect(onMockPlayerMove).toHaveBeenCalledWith(props.index, props.curPlayer);
   });
 
   test("should render with X value", () => {
-    expect.assertions(1);
-    props.value = 'X';
-    const { toJSON } = render(<Box {...props} />);
+    expect.assertions(2);
+    props.value = "X";
+    const { toJSON, getByTestId } = render(<Box {...props} />);
+    fireEvent(getByTestId("box-button"), "press");
+
     expect(toJSON()).toMatchSnapshot();
+    expect(onMockPlayerMove).not.toHaveBeenCalled();
   });
 
   test("should render with O value", () => {
-    expect.assertions(1);
-    props.value = 'O';
-    const { toJSON } = render(<Box {...props} />);
+    expect.assertions(2);
+    props.value = "O";
+    const { toJSON, getByTestId } = render(<Box {...props} />);
+    fireEvent(getByTestId("box-button"), "press");
+
     expect(toJSON()).toMatchSnapshot();
-  });  
-  
+    expect(onMockPlayerMove).not.toHaveBeenCalled();
+  });
 });
