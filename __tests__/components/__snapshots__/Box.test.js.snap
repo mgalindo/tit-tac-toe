@@ -42,6 +42,7 @@ exports[`Box component should render with O value 1`] = `
           "fontWeight": "bold",
         }
       }
+      testID="box-text"
     >
       O
     </Text>
@@ -91,6 +92,7 @@ exports[`Box component should render with X value 1`] = `
           "fontWeight": "bold",
         }
       }
+      testID="box-text"
     >
       X
     </Text>
@@ -138,6 +140,7 @@ exports[`Box component should render without value 1`] = `
           "fontWeight": "bold",
         }
       }
+      testID="box-text"
     >
       
     </Text>

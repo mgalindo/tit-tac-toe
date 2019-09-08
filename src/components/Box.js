@@ -27,7 +27,9 @@ const Box = props => {
         disabled={disabled}
         testID="box-button"
       >
-        <Text style={styles.boxText}>{value}</Text>
+        <Text style={styles.boxText} testID="box-text">
+          {value}
+        </Text>
       </TouchableOpacity>
     </View>
   );

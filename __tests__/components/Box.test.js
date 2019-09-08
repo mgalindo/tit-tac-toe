@@ -46,4 +46,12 @@ describe("Box component", () => {
     expect(toJSON()).toMatchSnapshot();
     expect(onMockPlayerMove).not.toHaveBeenCalled();
   });
+
+  test("should display the value in the box", () => {
+    expect.assertions(1);
+    props.value = "X";
+    const { getByTestId } = render(<Box {...props} />);
+    const boxText = getByTestId("box-text");
+    expect(boxText.props.children).toEqual(props.value);
+  });
 });

@@ -32,7 +32,9 @@ const Board = props => {
           </View>
         );
       })}
-      <Text style={styles.playerText}>Next Player: {curPlayer}</Text>
+      <Text style={styles.playerText} testID="player-text">
+        Next Player: {curPlayer}
+      </Text>
     </View>
   );
 };
